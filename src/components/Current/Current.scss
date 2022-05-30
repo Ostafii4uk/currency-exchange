@@ -1,0 +1,41 @@
+.current {
+  margin: 0 auto;
+  padding: 25px;
+
+  background-color: #323232;
+
+  &__title {
+    margin: 0;
+
+    font-size: 16px;
+    font-weight: 700;
+
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 10px;
+
+    border-top: 1px solid rgb(161, 161, 161);
+    border-bottom: 1px solid rgb(161, 161, 161);
+  }
+
+  &__title {
+    color: rgb(161, 161, 161);
+  }
+
+  &__select {
+    color: rgb(161, 161, 161);
+
+    background-color: transparent;
+
+    border-radius: 8px;
+    border: none;
+  }
+
+  &__option {
+    color: #000;
+  }
+}
