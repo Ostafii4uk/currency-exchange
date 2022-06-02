@@ -17,13 +17,12 @@ export const Exchange: React.FC = React.memo(() => {
   }, [])
 
   const validationNumber = (quer: string) => {
-    if ((Number(quer[quer.length - 1])).toString() !== 'NaN') {
+    if ((Number(quer)).toString() !== 'NaN') {
       setQueryNumber(quer);
       setErrorQueryNumber(false);
     } else if (deleteButton === 'Backspace') {
       setErrorQueryNumber(false);
       setQueryNumber('');
-      
     } else {
       setErrorQueryNumber(true);
     }
@@ -79,10 +78,10 @@ export const Exchange: React.FC = React.memo(() => {
       </div>
       <select
         className='exchange__select-currenct'
+        onChange={(event) => setCurrency(event.target.value)}
       >
         <option
-          value="0"
-          onClick={() => setCurrency('UAH')}
+          value="UAH"
           className='exchange__option-currenct'
         >
           UAH
@@ -90,8 +89,7 @@ export const Exchange: React.FC = React.memo(() => {
         {currentcyArr.map(ticker => (
           <option
             key={ticker.r030}
-            value={(currentcyArr.indexOf(ticker)) + 1}
-            onClick={() => setCurrency(ticker.cc)}
+            value={ticker.cc}
             className='exchange__option-currenct'
           >
             {ticker.cc}
@@ -101,14 +99,14 @@ export const Exchange: React.FC = React.memo(() => {
       <div
         className='exchange__text'
       >
-        IN
+        in
       </div>
       <select
         className='exchange__select-base'
+        onChange={(event) => setBase(event.target.value)}
       >
         <option
-          value="0"
-          onClick={() => setBase('UAH')}
+          value="UAH"
           className="exchange__option-base"
         >
           UAH
@@ -116,8 +114,7 @@ export const Exchange: React.FC = React.memo(() => {
         {currentcyArr.map(ticker => (
           <option
             key={ticker.r030}
-            value={(currentcyArr.indexOf(ticker)) + 1}
-            onClick={() => setBase(ticker.cc)}
+            value={ticker.cc}
             className="exchange__option-base"
           >
             {ticker.cc}
@@ -127,10 +124,7 @@ export const Exchange: React.FC = React.memo(() => {
       <div
         className='exchange__result'
       >
-        {queryNumber
-          &&
-           getExchange()
-        }
+        {getExchange()}
       </div>
     </div>
   )

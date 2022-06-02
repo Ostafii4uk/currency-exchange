@@ -19,7 +19,11 @@
   &__input {
     padding: 5px;
 
-    background-color: #a1a1a1;;
+    width: 200px;
+    height: 20px;
+
+    font-size: 14px;
+
     border: none;
     border-radius: 5px;
 
@@ -61,17 +65,18 @@
   }
 
   &__result {
-    width: 100px;
+    width: 200px;
+    height: 20px;
+    padding: 5px;
 
     color: black;
     text-align: center;
 
-    font-size: 16px;
-    font-weight: 700;
+    font-size: 14px;
 
-    border-radius: 8px;
+    border-radius: 5px;
 
-    background-color: #a1a1a1;
+    background-color: white;
 
     overflow: auto;
   }

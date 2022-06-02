@@ -13,17 +13,21 @@ export const Current: React.FC = React.memo(() => {
       .then(excFromServer => setExchangeCours(excFromServer))
   }, []);
 
+  console.log(selectedCurrency)
+
   return (
     <div className='current'>
       <div className='current__header'>
         <p className='current__title'>
-          Виберіть базову валюту:
+          Select the base currency:
         </p>
-        <select className='current__select'>
+        <select 
+          className='current__select'
+          onChange={(event) => setSelectedCurrency(event.target.value)}
+        >
           <option
             className='current__option'
-            value="0"
-            onClick={() => setSelectedCurrency("UAH")}
+            value="UAH"
           >
             UAH
           </option>
@@ -31,8 +35,7 @@ export const Current: React.FC = React.memo(() => {
             <option
               key={ticker.r030}
               className='current__option'
-              value={(currentcyArr.indexOf(ticker)) + 1}
-              onClick={() => setSelectedCurrency(ticker.cc)}
+              value={ticker.cc}
             >
               {ticker.cc}
             </option>
@@ -40,9 +43,9 @@ export const Current: React.FC = React.memo(() => {
         </select>
       </div>
       <Info
-        exchangeCours={exchangeCours}
-        selectedCurrency={selectedCurrency}
-      />
+          exchangeCours={exchangeCours}
+          selectedCurrency={selectedCurrency}
+        />
     </div>
   )
 });
