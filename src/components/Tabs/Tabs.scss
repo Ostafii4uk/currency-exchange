@@ -1,5 +1,6 @@
 .tabs {
-  
+  display: flex;
+  justify-content: center;
 
   &__link {
     display: inline-block;
@@ -8,6 +9,13 @@
 
     text-decoration: none;
     background-color: #323232;
+    
+    &:first-child {
+      border-top-left-radius: 10px;
+    }
 
+    &:last-child {
+      border-top-right-radius: 10px;
+    }
   }
 }

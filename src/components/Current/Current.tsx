@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { getExchangeCours } from '../../api/api';
-import { CurrentInfo } from '../CurrentInfo';
+import { Info } from '../Info';
 import './Current.scss';
 
 export const Current: React.FC = React.memo(() => {
   const [exchangeCours, setExchangeCours] = useState([]);
   const [selectedCurrency, setSelectedCurrency] = useState("UAH");
+  const currentcyArr: Currency[] = exchangeCours;
 
   useEffect(() => {
     getExchangeCours()
       .then(excFromServer => setExchangeCours(excFromServer))
   }, []);
-
 
   return (
     <div className='current'>
@@ -23,27 +23,23 @@ export const Current: React.FC = React.memo(() => {
           <option
             className='current__option'
             value="0"
-            onClick={() => setSelectedCurrency('UAH')}
+            onClick={() => setSelectedCurrency("UAH")}
           >
             UAH
           </option>
-          <option
-            className='current__option'
-            value="1"
-            onClick={() => setSelectedCurrency('EUR')}
-          >
-            EUR
-          </option>
-          <option
-            className='current__option'
-            value="2"
-            onClick={() => setSelectedCurrency('USD')}
-          >
-            USD
-          </option>
+          {currentcyArr.map(ticker => (
+            <option
+              key={ticker.r030}
+              className='current__option'
+              value={(currentcyArr.indexOf(ticker)) + 1}
+              onClick={() => setSelectedCurrency(ticker.cc)}
+            >
+              {ticker.cc}
+            </option>
+          ))}
         </select>
       </div>
-      <CurrentInfo
+      <Info
         exchangeCours={exchangeCours}
         selectedCurrency={selectedCurrency}
       />

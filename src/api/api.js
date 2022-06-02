@@ -1,4 +1,4 @@
-const API_URL = 'https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5';
+const API_URL = 'https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json';
 
 export const getExchangeCours = () => {
   return fetch(API_URL)

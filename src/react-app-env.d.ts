@@ -7,8 +7,9 @@ interface Tab {
 }
 
 interface Currency {
-  ccy: string,
-  base_ccy: string,
-  buy: string,
-  sale: string
+  r030: number,
+  txt: string,
+  rate: number,
+  cc: string,
+  exchangedate: string,
 }
