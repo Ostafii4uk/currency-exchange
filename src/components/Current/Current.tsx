@@ -13,8 +13,6 @@ export const Current: React.FC = React.memo(() => {
       .then(excFromServer => setExchangeCours(excFromServer))
   }, []);
 
-  console.log(selectedCurrency)
-
   return (
     <div className='current'>
       <div className='current__header'>

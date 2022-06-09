@@ -2,11 +2,7 @@ import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import './Tabs.scss';
 
-type Props = {
-  tabs: Tab[],
-};
-
-export const Tabs: React.FC<Props> = React.memo(({
+export const Tabs: React.FC<Tabs> = React.memo(({
   tabs,
 }) => {
   return (

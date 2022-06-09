@@ -1,13 +1,7 @@
 import React from 'react';
 import './Info.scss';
 
-interface Props {
-  selectedCurrency: string,
-  exchangeCours: Currency[],
-}
-
-export const Info: React.FC<Props> = ({ selectedCurrency, exchangeCours }) => {
-
+export const Info: React.FC<Info> = ({ selectedCurrency, exchangeCours }) => {
   const getCours = (baseName: string, currencyName: string, currency: Currency[]) => {
     const base = currency.find(ticker => ticker.cc === baseName);
     const current = currency.find(ticker => ticker.cc === currencyName);
