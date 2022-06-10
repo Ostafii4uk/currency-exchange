@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom/client';
 import './index.scss';
-import createRoutes from './routers/routers';
+import { createRoutes } from './routers';
 
 const routes = createRoutes()
 const root = ReactDOM.createRoot(

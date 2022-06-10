@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getExchangeCours } from '../../api/api';
+import { getExchangeCours } from '../../api';
 import './Exchange.scss';
 
 export const Exchange: React.FC = React.memo(() => {

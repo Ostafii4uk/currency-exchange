@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { getExchangeCours } from '../../api/api';
-import { Info } from '../Info';
+import { getExchangeCours } from '../../api';
+import { Info } from '../';
 import './Current.scss';
 
 export const Current: React.FC = React.memo(() => {

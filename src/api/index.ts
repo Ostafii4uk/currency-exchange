@@ -1,0 +1,1 @@
+export { getExchangeCours } from './api';

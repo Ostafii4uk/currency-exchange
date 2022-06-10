@@ -1,9 +1,8 @@
 import React from 'react';
-import { Tabs } from './components/Tabs/Tabs';
-
 import './App.scss';
-import { Exchange } from './components/Exchange/Exchange';
-import { Current } from './components/Current/Current';
+import { Tabs } from './pages';
+import { Exchange } from './components';
+import { Current } from './components';
 
 const tabs: Tab[] = [
   { id: 'Exchange', title: 'Exchange', content: <Exchange /> },

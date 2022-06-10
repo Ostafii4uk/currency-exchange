@@ -1,8 +1,8 @@
 import { Route, HashRouter, Routes } from 'react-router-dom';
-import { Tab } from '../components/Tab';
+import { Tab } from '../pages';
 import App from '../App';
 
-const createRoutes = () => (
+export const createRoutes = () => (
   <HashRouter>
     <Routes>
       <Route path="/" element={<App />}>
@@ -11,5 +11,3 @@ const createRoutes = () => (
     </Routes>
   </HashRouter>
 );
-
-export default createRoutes;
